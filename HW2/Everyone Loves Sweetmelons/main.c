@@ -12,7 +12,7 @@ typedef struct tree{
 }Tree;
 
 typedef struct heap{
-	long int price;
+	long long price;
 	int length;
 }Heap;
 
@@ -64,7 +64,7 @@ int main(){
     for(i=0;i<M;i++){
 	    for(j=0;j<N;j++){
 			event[j][i]=malloc(sizeof(Heap));
-			scanf("%ld %d", &event[j][i]->price, &temp);
+			scanf("%lld %d", &event[j][i]->price, &temp);
 			event[j][company[j]->HeapLen]->length=i+temp;
 			company[j]->HeapLen++;
 
