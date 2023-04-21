@@ -69,12 +69,12 @@ int main(){
 			company[j]->HeapLen++;
 
 			//check the price
-			if(event[j][i]->price<event[j][0]->price){
-				temp=event[j][i]->price;
-        		event[j][i]->price=event[j][0]->price;
+			if(event[j][company[j]->HeapLen-1]->price<event[j][0]->price){
+				temp=event[j][company[j]->HeapLen-1]->price;
+        		event[j][company[j]->HeapLen-1]->price=event[j][0]->price;
         		event[j][0]->price=temp;
-				temp=event[j][i]->length;
-        		event[j][i]->length=event[j][0]->length;
+				temp=event[j][company[j]->HeapLen-1]->length;
+        		event[j][company[j]->HeapLen-1]->length=event[j][0]->length;
         		event[j][0]->length=temp;
 			}
 
