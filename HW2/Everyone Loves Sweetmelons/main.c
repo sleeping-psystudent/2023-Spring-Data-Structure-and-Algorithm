@@ -3,20 +3,21 @@
 
 typedef struct tree{
 	int HeapLen;
-	int HeapPrice;
-	int TreePrice;
+	int Num;
+	long long int HeapPrice;
+	long long int TreePrice;
 	int childNum;
 	int *children;
 	int subtreeSize;
 }Tree;
 
 typedef struct heap{
-	long long price;
+	long long int price;
 	int length;
 }Heap;
 
 void heapify(int N, int M, int ID, int day, int num, Heap* event[N][M]);
-int TreeREC(int N, int root, Tree* company[N], int* size, int C);
+long long int TreeREC(int N, int root, Tree* company[N], int* size, int C);
 int TreeREC_childNum(int N, int root, Tree* company[N]);
 
 int main(){
@@ -33,29 +34,27 @@ int main(){
     for(i=0;i<N;i++){
 		company[i]=malloc(sizeof(Tree));
 		company[i]->HeapLen=0;
+		company[i]->Num=0;
 		company[i]->HeapPrice=0;
 		company[i]->TreePrice=0;
 		company[i]->childNum=0;
 		company[i]->subtreeSize=1;
     }
     //input parents of each node
-	printf("children 0\n");
-	int arr[N-1];
+    int arr[N-1];
     for(i=2;i<=N;i++){
         scanf("%d", &temp);
-        arr[i-2]=temp;
-		company[temp-1]->childNum++;
+        arr[i-2]=temp-1;
+	company[temp-1]->childNum++;
     }
-	printf("children 1\n");
-	for(i=0;i<N;i++){
-		company[i]->children=(int*)malloc(company[i]->childNum*sizeof(int));
-	}
-	printf("children 2\n");
-	for(i=2;i<=N;i++){
-		printf("children %d: %d\n", i, arr[i-2]);
-		company[arr[i-2]-1]->children[company[arr[i-2]-1]->childNum]=i-1; //company index starts from 0
-	}
-	TreeREC_childNum(N, 0, company);
+    for(i=0;i<N;i++){
+	    company[i]->children=(int*)malloc(company[i]->childNum*sizeof(int));
+    }
+    for(i=2;i<=N;i++){
+	company[arr[i-2]]->children[company[arr[i-2]]->Num]=i-1; //company index starts from 0
+	company[arr[i-2]]->Num++;
+    }
+    TreeREC_childNum(N, 0, company);
 /*
     //testing
     for(i=0;i<N;i++){
@@ -67,10 +66,11 @@ int main(){
     }
 */
 	//heap: company, day, price+sales
-	int size, cursor, smaller;
-    Heap* event[N][M];
-    for(i=0;i<M;i++){
-	    for(j=0;j<N;j++){
+int size, cursor, smaller;
+long long int tempC;
+Heap* event[N][M];
+for(i=0;i<M;i++){
+	for(j=0;j<N;j++){
 			event[j][i]=malloc(sizeof(Heap));
 			//INSERT
 			scanf("%lld %d", &event[j][company[j]->HeapLen]->price, &temp);
@@ -85,28 +85,27 @@ int main(){
 
 				if(smaller==(cursor-1)/2) break;
 				else{
-					temp=event[j][cursor]->price;
-        			event[j][cursor]->price=event[j][(cursor-1)/2]->price;
-        			event[j][(cursor-1)/2]->price=temp;
+					tempC=event[j][cursor]->price;
+        				event[j][cursor]->price=event[j][(cursor-1)/2]->price;
+        				event[j][(cursor-1)/2]->price=tempC;
 					temp=event[j][cursor]->length;
-        			event[j][cursor]->length=event[j][(cursor-1)/2]->length;
-        			event[j][(cursor-1)/2]->length=temp;
+        				event[j][cursor]->length=event[j][(cursor-1)/2]->length;
+        				event[j][(cursor-1)/2]->length=temp;
 					cursor=(cursor-1)/2;
 				}
 			}
-
 
 			//check the sales
 			while(event[j][0]->length<i){
 				event[j][0]->price=1000000001;
 				//swap
-				temp=event[j][company[j]->HeapLen-1]->price;
-        		event[j][company[j]->HeapLen-1]->price=event[j][0]->price;
-        		event[j][0]->price=temp;
+				tempC=event[j][company[j]->HeapLen-1]->price;
+        			event[j][company[j]->HeapLen-1]->price=event[j][0]->price;
+        			event[j][0]->price=tempC;
 				temp=event[j][company[j]->HeapLen-1]->length;
-        		event[j][company[j]->HeapLen-1]->length=event[j][0]->length;
-        		event[j][0]->length=temp;
-        		company[j]->HeapLen--;
+        			event[j][company[j]->HeapLen-1]->length=event[j][0]->length;
+        			event[j][0]->length=temp;
+        			company[j]->HeapLen--;
 				heapify(N, M, j, company[j]->HeapLen, 0, event);
 			}
 
@@ -131,12 +130,14 @@ void heapify(int N, int M, int ID, int len, int num, Heap* event[N][M]){
     if(left<len && event[ID][left]->price<event[ID][smallest]->price) smallest = left;
     if(right<len && event[ID][right]->price<event[ID][smallest]->price) smallest = right;
 
+    long long int tempC;
+    int temp;
     if (smallest!=num) {
         //swap
-        int temp=event[ID][num]->price;
+        tempC=event[ID][num]->price;
         event[ID][num]->price=event[ID][smallest]->price;
-        event[ID][smallest]->price=temp;
-		temp=event[ID][num]->length;
+        event[ID][smallest]->price=tempC;
+	temp=event[ID][num]->length;
         event[ID][num]->length=event[ID][smallest]->length;
         event[ID][smallest]->length=temp;
         //heapify subtree
@@ -145,8 +146,8 @@ void heapify(int N, int M, int ID, int len, int num, Heap* event[N][M]){
 }
 
 
-int TreeREC(int N, int root, Tree* company[N], int* size, int C){
-	int priceSum=company[root]->HeapPrice;
+long long int TreeREC(int N, int root, Tree* company[N], int* size, int C){
+	long long int priceSum=company[root]->HeapPrice;
 	int subtreeNum=company[root]->subtreeSize;
 	for(int i=0;i<company[root]->childNum;i++){
 		priceSum+=TreeREC(N, company[root]->children[i], company, size, C);
@@ -162,5 +163,6 @@ int TreeREC_childNum(int N, int root, Tree* company[N]){
 	for(int i=0;i<company[root]->childNum;i++){
 		company[root]->subtreeSize+=TreeREC_childNum(N, company[root]->children[i], company);
 	}
+	//testing
 	return company[root]->subtreeSize;
 }
