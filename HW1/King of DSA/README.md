@@ -21,8 +21,49 @@ Given the attack power of the $N$ players, can you help Little Cucumber calculat
 ## Input
 The first line contains two integers $N$ and $M$---the number of rounds (players) and the arena's maximum capacity. The second line contains $N$ integers $a_1,a_2,...,a_N$, which is the attack power of each player, separated by space.
 ## Output
-The output should consist of $N+1$ lines. The first $N$ lines should begin with the string "Round i:", where is the round number. Each of the $N$ lines should include the player(s) that are killed in that round. The last line should begin with the string "`Final:`", followed by the players who are still alive at the end of the game. When outputting the players (killed ones in the first lines and the surviving ones in the last line), print out the players' *indices* (the round that each of them entered the arena), sorted in *descending* order and separated by space.
+The output should consist of $N+1$ lines. The first $N$ lines should begin with the string "`Round i:`", where is the round number. Each of the $N$ lines should include the player(s) that are killed in that round. The last line should begin with the string "`Final:`", followed by the players who are still alive at the end of the game. When outputting the players (killed ones in the first lines and the surviving ones in the last line), print out the players' *indices* (the round that each of them entered the arena), sorted in *descending* order and separated by space.
 ## Constraint
 + $1\leq N\leq 10^6$
 + $1\leq M\leq 10^3$
 + $1\leq a_i\leq 10^9$
+## Hints
++ Please note the memory limit, which requires you to use $O(M)$ memory.
++ If you receive a Runtime Error (RE) on the DSA judge, it is possible that you have exceeded the memory limit.
++ Little Cucumber suggests you to carefully visualize how the game is played instead of staring at the numbers.
+## Sample Testcases
+### Sample Input1
+```
+10 4
+8 5 2 4 7 6 5 3 4 6
+```
+### Sample Output1
+```
+Round 1:
+Round 2:
+Round 3:
+Round 4: 3
+Round 5: 4 2
+Round 6:
+Round 7:
+Round 8: 1
+Round 9: 8
+Round 10: 9 7
+Final: 10 6 5
+```
+### Smaple Input 2
+```
+8 3
+5 5 5 5 6 4 4 5
+```
+### Sample Output2
+```
+Round 1:
+Round 2:
+Round 3:
+Round 4: 1
+Round 5: 4 3 2
+Round 6:
+Round 7:
+Round 8: 7 6
+Final: 8 5
+```
