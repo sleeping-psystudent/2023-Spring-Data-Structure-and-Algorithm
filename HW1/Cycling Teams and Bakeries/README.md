@@ -43,7 +43,7 @@ Output $n$ lines, each line contains $m$ integers separated by spaces. The $j$-t
 ## Constraints
 + $1\leq n, m \leq 1000$
 + $1\leq t_{ij}, s_k \leq 10^9, \forall i, j, k$
-+ $1\leq u_{ij}, r_k \leq 10^9, \forall i, j, k$, All $u_{ij}$ are distinct
++ $1\leq u_{ij}, r_k \leq 10^9, \forall i, j, k$. All $u_{ij}$ are distinct
 + $l_k\geq 0$
 + $T_1+R+T_2\leq 10^6$
 + $\sum_k l_k\leq 10^6$
