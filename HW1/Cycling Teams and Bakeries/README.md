@@ -14,7 +14,7 @@ members would be at an open bakery of rank $r_{k}$ as the initial gathering bake
 2. Among the selected bakeries, choose the ones with the minimum distance to the gathering bakery.
 3. Among the chosen bakeries, visit the one with the smallest rank.
 4. Let each member of the team eat a piece of toast to restore energy at the bakery being visited. That is, decrease the number of toasts
-$t_{ij}$ by $s_{k}$ for the bakery. If the new {t_{ij}\leq 0}, the bakery being visited would then need to be closed.
+$t_{ij}$ by $s_{k}$ for the bakery. If the new $t_{ij}\leq 0$, the bakery being visited would then need to be closed.
 5. If the number of bakeries that the team has visited does not exceed
 , set the bakery being visited as the new gathering bakery, and go to step 1. Otherwise, the team ends its training and returns home.
 
@@ -24,7 +24,22 @@ as the center of the racing track. The track is a square with a side length of $
 Given the plan on each day of the training and racing periods, output the final number of toasts of the bakeries.
 
 ## Input
+There are $2$ integers $n,m$ separated by a space in the first line.
+
+Each of the next $n$ lines contains $m$ integers separated by spaces. The $j$-th integer of the $i$-th line is $u_{ij}$(the rank of $b_{ij}$).
+
+Each of the next $n$ lines contains $m$ integers separated by spaces. The $j$-th integer of the $i$-th line is $t_{ij}$(the initial number of toasts of $b_{ij}$).
+
+There are $3$ integers $T_{1}, R, T_{2}$ separated by spaces in the next line, which denote the number of days for the first training period, the racing period, and the second training period, respectively.
+
+Each of the next $T_1$ lines corresponds to each day in the first training period, and contains $3$ integers $r_{k}$ (the rank of the initial gathering bakery), $l_k$ (the maximum riding length), and $s_k$ (the size of the cycling team), separated by spaces.
+
+Each of the next $R$
+lines corresponds to each day in the racing period, and contains $2$ integers $r_k$ (the rank of the center bakery) and $l_k$ (the *odd* side length of the square track), separated by spaces.
+
+Each of the next $T_2$ lines corresponds to each day in the second training period, and contains $3$ integer $r_k$ (the rank of the initial gathering bakery), $l_k$ (the maximum riding length), and $s_k$ (the size of the cycling team), separated by spaces.
 ## Output Format
+Output $n$ lines, each line contains $m$ integers separated by spaces. The $j$-th integer of the $i$-th line should be $t_{ij}$, which is the final number of toasts of $b_{ij}$, for any open bakery. If the bakery is closed (i.e. $t_{ij}\leq 0$), simply output $0$.
 ## Constraints
 ## Sample Cases
 ### Sample Input 1
