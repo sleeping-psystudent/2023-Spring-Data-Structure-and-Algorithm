@@ -9,19 +9,19 @@
 |週|主題|程式題作業|成績
 |----|----|----|----|
 |W01|Course Introduction, Algorithm|||
-|W02|Holiday [Self-study: Data Structure]|||
+|W02|Holiday [Self-study: Data Structure]|[HW0](https://github.com/sleeping-psystudent/2023-Spring-DSA/tree/main/HW0)|50+50/100|
 |W03|Performance Analysis|||
-|W04|Linked List|||
+|W04|Linked List|[HW1](https://github.com/sleeping-psystudent/2023-Spring-DSA/tree/main/HW1)|100+100+20/220|
 |W05|Stacks and Queues|||
 |W06|Tree, Heap|||
-|W07|Holiday|||
+|W07|Holiday|[HW2](https://github.com/sleeping-psystudent/2023-Spring-DSA/tree/main/HW2)|100+100/200|
 |W08|Sorting|||
 |W09|Midterm|||
 |W10|String Matching|||
-|W11|Linear-Time Sorting|||
+|W11|Linear-Time Sorting|[HW3](https://github.com/sleeping-psystudent/2023-Spring-DSA/tree/main/HW3)|100+100/200|
 |W12|Disjoint Set|||
 |W13|Hashing|||
-|W14|RB Tree|||
+|W14|RB Tree|[HW4](https://github.com/sleeping-psystudent/2023-Spring-DSA/tree/main/HW4)|100+100/200|
 |W15|B Tree|||
 |W16|Final Exam|||
 
