@@ -18,9 +18,9 @@ Given $M$ mixed steps of DSA's question-asking, greedy cats' swapping, and fairy
 ## Input
 The first line contains two space-separated integers $N$,$M$ the number of cats and the number of steps. The cats will be $0$-indexed. The second line contains $N$ space-separated integers $a_0,a_1,...,a_{N-1}$, where $a_i$ is the appetite of the $i^{th}$ cat. The third line contains $N$ space-separated integers $b_0,b_1,...,b_{N-1}$, where $b_i$ is the color of the $i^{th}$ cat. Each of the next $M$ lines contains one of the following:
 
-+ $1 c_j,l_j,r_j$ : a questioning step (1) followed by three space-separated integers $c_j,l_j,r_j$, which denote the color, the lower bound, and the upper bound of the question. There can be no cats that are of color $c_j$ in a questioning step.
-+ $2 k_j$: a swapping step (2) followed by an integer $k_j$, which is the index of greedy cat.
-+ $3 c_j,s_j,t_j$: a magic step (3) followed by three space-separated integers $c_j,s_j,t_j$, which denotes the color, the direction of the magic, and the success/failure of the magic. We guarantee that a cat with color $c_j$ always exists for a magic step.
++ $1\ c_j,l_j,r_j$ : a questioning step (1) followed by three space-separated integers $c_j,l_j,r_j$, which denote the color, the lower bound, and the upper bound of the question. There can be no cats that are of color $c_j$ in a questioning step.
++ $2\ k_j$: a swapping step (2) followed by an integer $k_j$, which is the index of greedy cat.
++ $3\ c_j,s_j,t_j$: a magic step (3) followed by three space-separated integers $c_j,s_j,t_j$, which denotes the color, the direction of the magic, and the success/failure of the magic. We guarantee that a cat with color $c_j$ always exists for a magic step.
 
 ## Output
 For each questioning step, output the answer to the question in a new line.
