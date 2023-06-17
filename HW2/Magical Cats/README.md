@@ -29,7 +29,7 @@ For each questioning step, output the answer to the question in a new line.
 + $2\leq N\leq 3\times 10^5$
 + $1\leq M\leq 3\times 10^5$
 + $1\leq a_i,b_i,c_i\leq 10^9$
-+ $0\leq k_j\<N$
++ $0\leq k_j < N$
 + $s_j,t_j\in \{0,1\}$
 + $-2\times 10^9\leq l_j\leq r_j\leq 2\times 10^9$
 
