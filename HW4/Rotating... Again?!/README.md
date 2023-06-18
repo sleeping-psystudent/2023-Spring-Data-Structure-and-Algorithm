@@ -17,10 +17,12 @@ sad
 dsa
 qqq
 ```
+
 ### Smaple Output 1
 ```
 4
 ```
+
 ### Sample Input 2
 ```
 3 7
@@ -35,6 +37,7 @@ cucumber
 1 bercucum
 2 nanabana
 ```
+
 ### Sample Output 2
 ```
 1
@@ -46,6 +49,7 @@ cucumber
 11
 7
 ```
+
 ### Sample Input 3
 ```
 2 3
@@ -55,6 +59,7 @@ walnut
 1 walnut
 2 walnut
 ```
+
 ### Sample Output 3
 ```
 1
@@ -62,5 +67,6 @@ walnut
 6
 3
 ```
+
 ## Hints
 Consider the algorithm you developed for problem 1.2, which calculates the Rabin-Karp hashes for all rotations of a string. Think about how to compare between the hashes of all rotations of two strings.
