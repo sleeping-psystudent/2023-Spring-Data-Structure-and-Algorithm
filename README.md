@@ -1,4 +1,5 @@
-# 2023-Sping-Data-Structure-and-Algorithm
+# 2023-Spring-Data-Structure-and-Algorithm
+
 ## 簡介
 * 課程名稱：[資料結構與演算法](https://coursemap.aca.ntu.edu.tw/course_map_all/course.php?code=902+10750)
 * 授課教師：[林軒田](https://www.csie.ntu.edu.tw/~htlin/) 老師、[蔡欣穆](https://www.csie.ntu.edu.tw/~hsinmu/site/) 老師
