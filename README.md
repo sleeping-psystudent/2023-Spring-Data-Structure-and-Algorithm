@@ -1,4 +1,4 @@
-# 2023-Spring-Data-Structure-and-Algorithm 
+# 2023-Spring-Data-Structure-and-Algorithm
 
 ## 簡介
 * 課程名稱：[資料結構與演算法](https://coursemap.aca.ntu.edu.tw/course_map_all/course.php?code=902+10750)
